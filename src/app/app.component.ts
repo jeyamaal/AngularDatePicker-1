@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import datepicker from 'angular-ui-bootstrap/src/datepicker';
 
 @Component({
   selector: 'app-root',
