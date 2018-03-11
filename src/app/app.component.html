@@ -1,10 +1,41 @@
 
 
 <h4>Date time picker popup</h4>
-<input 
-	type="date" 
-  datepicker-popup 
-	class="form-control" 
-	id="dateOfBirth" 
-	name="dateOfBirth"
-	placeholder="DoB" >
+
+<form (ngSubmit)="onSubmit()" [formGroup]="birthdateForm" ngNativeValidate > 
+ 
+
+ <input type="date"  class="form-control" formControlName="mydate">
+
+ <br><br>
+
+ <select class="selectpicker" data-live-search="true" formControlName="mulselect" multiple>
+  <option>Mustard</option>
+  <option>Ketchup</option>
+  <option>Relish</option>
+</select>
+
+<div class="form-group form-inline">
+  <label class="btn btn-secondary btn-file">Browse</label>
+     <input name="file" type="file" (change)="onFileChange($event)">
+     <input type="hidden" name="fileHidden" formControlName="imageInput" (change)="onFileChange($event)"/>
+     <img [src]="url" height="200"> <br/>
+  </div>
+
+     <!-- <input type='file' (change)="readUrl($event)">
+<img [src]="url"> -->
+
+<!-- <input type='file' (change)="readUrl($event)">
+<input type="hidden" name="fileHidden" formControlName="imageInput"/>
+<img [src]="url">
+
+  <p *ngIf="file" class="pl-4 align-middle mb-0">{{file.name}}</p> -->
+ 
+
+
+
+
+
+ <button type="submit" [disabled]="!birthdateForm.valid">Submit</button>
+
+</form>

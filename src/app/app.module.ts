@@ -1,23 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import datepickerpopup from 'angular-ui-bootstrap/src/datepickerPopup';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    datepickerpopup
+
    ],
   imports: [
     BrowserModule,
-    datepickerpopup
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
 
-export class AppModule { 
-
-}
+export class AppModule {}
